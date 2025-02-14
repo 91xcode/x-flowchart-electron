@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>API 配置管理</title>
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>API 配置管理</h1>
+        <button id="add-config" class="primary-button">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+          添加新配置
+        </button>
+      </header>
+
+      <div class="config-list">
+        <!-- 配置列表将通过 JavaScript 动态生成 -->
+      </div>
+
+      <!-- 添加/编辑配置的对话框 -->
+      <div id="config-modal" class="modal">
+        <div class="modal-content">
+          <h2 id="modal-title">添加新配置</h2>
+          <form id="config-form" class="settings-form">
+            <div class="form-group">
+              <label for="config-name">配置名称:</label>
+              <input type="text" id="config-name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="api-type">API 类型:</label>
+              <select id="api-type" class="select-input" required>
+                <option value="local">本地模型 (Ollama)</option>
+                <option value="openai">OpenAI</option>
+                <option value="azure">Azure OpenAI</option>
+                <option value="anthropic">Anthropic</option>
+              </select>
+            </div>
+
+            <div id="config-fields" class="form-fields">
+              <!-- 字段将根据选择的 API 类型动态生成 -->
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="save-button">保存</button>
+              <button type="button" class="cancel-button" id="close-modal">取消</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="settings.js"></script>
+  </body>
+</html> 
