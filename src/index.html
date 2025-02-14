@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI 流程图生成器</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="renderer.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI 流程图生成器</h1>
+      <div class="input-section">
+        <div class="direction-control">
+          <label>
+            <input type="checkbox" id="direction-toggle" />
+            纵向布局
+          </label>
+        </div>
+        <textarea id="prompt" placeholder="请输入流程描述，AI 将帮你生成流程图..."></textarea>
+        <button id="generate">生成流程图</button>
+      </div>
+      <div class="output-section">
+        <div id="diagram"></div>
+      </div>
+    </div>
+  </body>
+</html>
